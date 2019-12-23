@@ -3,7 +3,7 @@ import { DEFAULT_OPTIONS } from './WorkflowsJS.js'
 import {
   observable,
   observe,
-} from '../node_modules/@nx-js/observer-util/dist/es.es6.js'
+} from '//unpkg.com/@nx-js/observer-util@4.2.2/dist/es.es6.js'
 
 export default class Component {
   constructor(name = '', opts = {}) {
@@ -11,7 +11,6 @@ export default class Component {
     this.position = observable(opts.position || { x: 0, y: 0 })
     this.size = observable(opts.size || DEFAULT_OPTIONS.gridSize)
 
-    /** @type {HTMLElement} */
     this.$el = this.createElement()
     this.$el.dataset.componentId = uuidv4()
 
