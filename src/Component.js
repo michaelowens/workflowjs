@@ -26,11 +26,13 @@ export default class Component {
     observe(() => this._updatePosition(this.position))
   }
 
+  /** @param {number} size */
   _updateSize(size) {
     this.$el.style.height = `${size}px`
     this.$el.style.width = `${size}px`
   }
 
+  /** @param {{x?: number, y?: number}} pos */
   _updatePosition(pos) {
     this.$el.style.left = `${pos.x * this.size}px`
     this.$el.style.top = `${pos.y * this.size}px`

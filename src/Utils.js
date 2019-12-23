@@ -1,5 +1,10 @@
 import { DEFAULT_OPTIONS } from './WorkflowsJS.js'
 
+/** 
+ * @param {number} delay
+ * @param {Function} fn
+ * @param {number} lastCall
+ */
 export const throttle = (delay, fn, lastCall = 0) => (...args) => {
   const now = new Date().getTime()
   if (now - lastCall >= delay) {
@@ -17,15 +22,19 @@ export const uuidv4 = () =>
     ).toString(16)
   )
 
-export function generateGridBackground(
-  /** @type {number} */ size = DEFAULT_OPTIONS.gridSize
-) {
+export function generateGridBackground(size = DEFAULT_OPTIONS.gridSize) {
   var canvas = document.createElement('canvas')
   canvas.width = size
   canvas.height = size
   var ctx = canvas.getContext('2d')
   ctx.strokeStyle = '#666'
   ctx.strokeRect(0, 0, size, size)
+  // TODO: Fix this for Brave, toDataURL returns an empty string
+  let dataUrl = canvas.toDataURL('image/png')
 
-  return canvas.toDataURL('image/png')
+  if (!dataUrl) {
+    console.error('Could not generate grid background image, canvas returned empty data string')
+  }
+
+  return dataUrl
 }

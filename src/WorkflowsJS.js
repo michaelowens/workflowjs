@@ -5,8 +5,10 @@ import { generateGridBackground } from './Utils.js'
 export const DEFAULT_OPTIONS = { debug: false, gridSize: 32, showGrid: true }
 
 export default class WorkflowsJS {
+  /** 
+   * @param {HTMLElement} $el
+   */
   constructor($el, options = {}) {
-    /** @type {HTMLElement} */
     this.$el = $el
     this.options = Object.assign({}, DEFAULT_OPTIONS, options)
     /** @type {Component[]} */
@@ -20,7 +22,12 @@ export default class WorkflowsJS {
     return this
   }
 
-  createDraggable(/** @type{Component} */ component) {
+  /** 
+   * Attach drag & drop events to the given component
+   * 
+   * @param {Component} component
+   */
+  createDraggable(component) {
     let moveEvent
     component.$el.addEventListener('mousedown', e => {
       component.$el.style.opacity = '0.4'
