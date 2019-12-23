@@ -1,6 +1,7 @@
 import { DEFAULT_OPTIONS } from './WorkflowsJS.js'
 
-/** 
+/**
+ * Limits how often a function can be called
  * @param {number} delay
  * @param {Function} fn
  * @param {number} lastCall
@@ -13,7 +14,10 @@ export const throttle = (delay, fn, lastCall = 0) => (...args) => {
   }
 }
 
-/** @type {string} */
+/**
+ * Generate a version 4 UUID
+ * @return {string}
+ */
 export const uuidv4 = () =>
   ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
     (
@@ -22,6 +26,10 @@ export const uuidv4 = () =>
     ).toString(16)
   )
 
+/**
+ * Generates a square image with a border and returns the base64 data URL
+ * @return {string}
+ */
 export function generateGridBackground(size = DEFAULT_OPTIONS.gridSize) {
   var canvas = document.createElement('canvas')
   canvas.width = size
@@ -33,7 +41,9 @@ export function generateGridBackground(size = DEFAULT_OPTIONS.gridSize) {
   let dataUrl = canvas.toDataURL('image/png')
 
   if (!dataUrl) {
-    console.error('Could not generate grid background image, canvas returned empty data string')
+    console.error(
+      'Could not generate grid background image, canvas returned empty data string'
+    )
   }
 
   return dataUrl
