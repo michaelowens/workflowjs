@@ -4,8 +4,6 @@ Workflow engine written in pure JavaScript.
 
 To get started, all you need to do is install the dependencies and serve the files:
 
-Now serve the folder:
-
 ```shell
 $ npm install
 $ npx http-server
