@@ -1,4 +1,4 @@
-import { uuidv4 } from './Utils.js'
+import { uuidv4 } from './utils.js'
 
 export default class Viewport {
   constructor() {

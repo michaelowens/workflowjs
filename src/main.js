@@ -1,9 +1,9 @@
-import WorkflowsJS, { DEFAULT_OPTIONS } from './WorkflowsJS.js'
+import App, { DEFAULT_OPTIONS } from './app.js'
 import mockComponents from './mocks/components.js'
 
 /** @type {DEFAULT_OPTIONS} */
 const options = {}
-const app = new WorkflowsJS(document.querySelector('#app'), options)
+const app = new App(document.querySelector('#app'), options)
 app.components.push(...mockComponents())
 app.run()
 

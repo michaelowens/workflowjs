@@ -1,4 +1,4 @@
-import Component from '../Component.js'
+import Component from '../component/component.js'
 
 export default function mockComponents(options = {}) {
   return [

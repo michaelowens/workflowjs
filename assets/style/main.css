@@ -2,10 +2,6 @@
   box-sizing: border-box;
 }
 
-[draggable] {
-  user-select: none;
-}
-
 body {
   background: #1d1d1d;
 }
@@ -23,6 +19,7 @@ body {
   border: 1px solid #777;
   height: 400px;
   width: 600px;
+  user-select: none;
 }
 
 .viewport {

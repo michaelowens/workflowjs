@@ -1,5 +1,5 @@
-import { uuidv4 } from './Utils.js'
-import { DEFAULT_OPTIONS } from './WorkflowsJS.js'
+import { uuidv4 } from '../utils.js'
+import { DEFAULT_OPTIONS } from '../app.js'
 import {
   observable,
   observe,

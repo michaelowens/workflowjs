@@ -1,19 +1,21 @@
-import Component from './Component.js'
-import Viewport from './Viewport.js'
-import { generateGridBackground } from './Utils.js'
+import Component from './component/component.js'
+import Viewport from './viewport.js'
+import { generateGridBackground } from './utils.js'
 
 export const DEFAULT_OPTIONS = { debug: false, gridSize: 32, showGrid: true }
 
-export default class WorkflowsJS {
-  /** 
+export default class App {
+  /**
    * @param {HTMLElement} $el
    */
   constructor($el, options = {}) {
     this.$el = $el
     this.options = Object.assign({}, DEFAULT_OPTIONS, options)
+    this.viewport = new Viewport()
+
     /** @type {Component[]} */
     this.components = []
-    this.viewport = new Viewport()
+
     if (this.options.showGrid) {
       this.viewport.$el.style.backgroundImage = `url(${generateGridBackground()})`
     }
@@ -22,9 +24,9 @@ export default class WorkflowsJS {
     return this
   }
 
-  /** 
+  /**
    * Attach drag & drop events to the given component
-   * 
+   *
    * @param {Component} component
    */
   createDraggable(component) {

@@ -1,4 +1,4 @@
-import { DEFAULT_OPTIONS } from './WorkflowsJS.js'
+import { DEFAULT_OPTIONS } from './app.js'
 
 /**
  * Limits how often a function can be called
