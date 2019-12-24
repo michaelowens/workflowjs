@@ -2,6 +2,9 @@ import Component from './component/component.js'
 import Viewport from './viewport.js'
 import { generateGridBackground } from './utils.js'
 
+/**
+ * @type {{debug?: boolean, gridSize?: number, showGrid?: boolean}}
+ */
 export const DEFAULT_OPTIONS = { debug: false, gridSize: 32, showGrid: true }
 
 export default class App {
