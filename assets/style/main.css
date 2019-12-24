@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #1d1d1d;
+}
+
+.hidden {
+  display: none;
+}
+
+.wrapper {
+  display: flex;
+}
+
+#app {
+  display: flex;
+  border: 1px solid #777;
+  height: 400px;
+  width: 600px;
+  user-select: none;
+}
+
+.viewport {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.component {
+  background: #666;
+  border: 1px solid #aaa;
+  position: absolute;
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
