@@ -7,8 +7,11 @@ import {
 
 export default class Component {
   constructor(name = '', opts = {}) {
+    /** @type {string} */
     this.name = observable(name)
+    /** @type {{x?: number, y?: number}} */
     this.position = observable(opts.position || { x: 0, y: 0 })
+    /** @type {number} */
     this.size = observable(opts.size || DEFAULT_OPTIONS.gridSize)
 
     this.$el = this.createElement()
